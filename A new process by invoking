@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <unistd.h> // fork
+int main() {
+    printf("Program execution start here.\n");
+    int r = fork();
+    printf(
+        "Hello world -> My PID is %d, I am %s process\n", 
+        getpid(), 
+        r==0 ? "child" : "parent"
+    );
+    return 0;
+}
